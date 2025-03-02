@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const TextAnimation = () => {
-  const text = "Islahia Arabic College";
+  const text = "ISLAHIA  ARABIC  COLLEGE";
   const words = text.split(' ');
 
   const container = {
@@ -51,7 +51,7 @@ const TextAnimation = () => {
             key={index}
             style={{
               marginRight: '5px',
-              fontSize: '2rem',
+              fontSize: '25PX',
               fontWeight: 'bold',
               color: '#4A90E2', // Change to your preferred color
               textShadow: '2px 2px 4px rgba(0, 0, 0, 0.2)',
