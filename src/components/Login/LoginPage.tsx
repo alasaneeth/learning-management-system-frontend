@@ -1,56 +1,63 @@
 import React from 'react';
-import { useForm, SubmitHandler } from 'react-hook-form';
-
-// Define an interface for the form data
-interface IFormInput {
-  email: string;
-  password: string;
-}
-
+import CoverImage from "../../assets/auditoriam.jpeg"
+import DisplayName from "./DisplayNme"
 const LoginForm = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm<IFormInput>();
-
-  const onSubmit: SubmitHandler<IFormInput> = (data) => {
-    console.log('Email:', data.email);
-    console.log('Password:', data.password);
-  };
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="bg-sky-100 flex justify-center items-center h-screen">
+      <div className="w-1/2 h-screen hidden lg:block">
+        <img
+          src={CoverImage}
+          alt="Placeholder Image"
+          className="object-cover w-full h-full"
+        />
+      </div>
+      <div className="lg:p-36 md:p-52 sm:p-20 p-8 w-full lg:w-1/2">
+      <div>
+        <DisplayName/>
+      </div>
+        <form action="#" method="POST">
           <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-              Email
-            </label>
+            <label htmlFor="username" className="block text-gray-600">Username</label>
             <input
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              type="email"
-              id="email"
-              {...register('email', { required: 'Email is required' })}
+              type="text"
+              id="username"
+              name="username"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              autoComplete="off"
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
           </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
-              Password
-            </label>
+          <div className="mb-4">
+            <label htmlFor="password" className="block text-gray-800">Password</label>
             <input
-              className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               type="password"
               id="password"
-              {...register('password', { required: 'Password is required' })}
+              name="password"
+              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+              autoComplete="off"
             />
-            {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
+          </div>
+          <div className="mb-4 flex items-center">
+            <input
+              type="checkbox"
+              id="remember"
+              name="remember"
+              className="text-red-500"
+            />
+            <label htmlFor="remember" className="text-green-900 ml-2">Remember Me</label>
+          </div>
+          <div className="mb-6 text-blue-500">
+            <a href="#" className="hover:underline">Forgot Password?</a>
           </div>
           <button
-            className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
             type="submit"
+            className="bg-red-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
           >
             Login
           </button>
         </form>
+        <div className="mt-6 text-green-500 text-center">
+          <a href="#" className="hover:underline">Sign up Here</a>
+        </div>
       </div>
     </div>
   );
