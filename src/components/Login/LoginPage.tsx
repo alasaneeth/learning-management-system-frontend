@@ -43,10 +43,7 @@ const LoginForm = () => {
               name="remember"
               className="text-red-500"
             />
-            <label htmlFor="remember" className="text-green-900 ml-2">Remember Me</label>
-          </div>
-          <div className="mb-6 text-blue-500">
-            <a href="#" className="hover:underline">Forgot Password?</a>
+            <label htmlFor="remember" className="text-green-900 ml-2">Show Password</label>
           </div>
           <button
             type="submit"
