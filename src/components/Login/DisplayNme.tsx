@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const TextAnimation = () => {
-  const text = "Islahia Arabic College - Sri Lanka";
+  const text = "Islahia Arabic College";
   const words = text.split(' ');
 
   const container = {
